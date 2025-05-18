@@ -1,24 +1,56 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
+import useSectionInView from "../hooks/useSectionInView";
 
 const Navigation: React.FC = () => {
+  const location = useLocation();
+  const contactInView = useSectionInView("contact");
+
   return (
-    <nav style={{ position: "absolute", top: 0, right: 0 }}>
-      <ul
-        style={{
-          display: "flex",
-          gap: "1rem",
-          listStyle: "none",
-        }}
-      >
+    <nav>
+      <div className="logo signature">イマシ</div>
+      <ul>
         <li>
-          <Link to="/">Home</Link>
+          <NavLink
+            to="/"
+            className={({ isActive }) => (isActive ? "active" : "")}
+          >
+            Home
+          </NavLink>
         </li>
         <li>
-          <Link to="/about">About</Link>
+          <NavLink
+            to="/about"
+            className={({ isActive }) => (isActive ? "active" : "")}
+          >
+            About
+          </NavLink>
         </li>
         <li>
-          <Link to="/contact">Contact</Link>
+          <NavLink
+            to="/contact"
+            className={({ isActive }) => (isActive ? "active" : "")}
+          >
+            Projects
+          </NavLink>
+        </li>
+        <li>
+          <HashLink
+            smooth
+            to="/#contact"
+            className={contactInView ? "active" : ""}
+          >
+            Contact
+          </HashLink>
+        </li>
+        <li>
+          <NavLink
+            to="/contact"
+            className={({ isActive }) => (isActive ? "active" : "")}
+          >
+            Resume
+          </NavLink>
         </li>
       </ul>
     </nav>

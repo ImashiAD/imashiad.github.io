@@ -1,41 +1,74 @@
 const Home = () => {
   return (
     <>
-      <h1>Hi, I'm Imashi.</h1>
-      <p>
-        UI/UX Designer & Ambitious Content Creator. Currently, I'm based in the
-        New York City Area, designing responsive websites and leading the
-        creative process at Adspace Agency.
-        <br />
-        Nodpod
-        <br />
-        A website redesign for a beauty-focused sleepwear brand showcasing
-        versatile products that utilize the science of deep touch pressure.
-        <br />
-        Odd Sox
-        <br />
-        A website redesign for a sock brand that specializes in selling unique
-        designs featuring iconic shows, artists, and pop culture icons.
-        <br />
-        Jones & Daughters
-        <br />
-        A website redesign for a women’s boutique brand, focused on increasing
-        online sales by directing traffic toward higher priced categories.
-        <br />
-        The Nail Hub
-        <br />
-        A website redesign for a globally-renowned gel nail polish brand focused
-        on segmenting the DIY & professional shopper experience.
-        <br />
-        👋 Get in touch at
-        <br />
-        <br />
-        maxwell.marra@gmail.com
-        <br />
-        Contact Me
-        <br />
-        <br />
-      </p>
+      <div className="container">
+        <div className="hero-container">
+          <div className="grid page-hero">
+            <div className="page-hero-content">
+              <div className="page-hero-text">
+                <h1>Hi, I'm Imashi.</h1>
+                <p>
+                  A UI/UX Designer crafting functional, human-centered
+                  interfaces for complex systems.
+                </p>
+              </div>
+              <div className="page-hero-img"></div>
+            </div>
+          </div>
+        </div>
+        <section className="big-text-container">
+          <h1 className="big-text">
+            I transform technical requirements into intuitive design — because
+            good UI shouldn't need a manual
+          </h1>
+        </section>
+        <section id="projects" className="my-projects">
+          <div className="work-header-container">
+            <div className="section-subheader-container">
+              <hr />
+              <h5>Projects</h5>
+            </div>
+            <h1 className="section-header-container">Discover My Work</h1>
+          </div>
+
+          <div className="grid">
+            <a className="project eloc">
+              <div className="project-brief">
+                <div className="project-title">Eloc-Web</div>
+                <p className="project-desc">
+                  A web application designed to visualize elephant location data
+                  collected via the Eloc-node devices — which detect elephant
+                  rumbles using embedded ML models.
+                </p>
+              </div>
+              <div className="project-img-container"></div>
+            </a>
+            <a className="project boc">
+              <div className="project-brief">
+                <div className="project-title">BOC Mobile app</div>
+                <p className="project-desc">
+                  A redesign for the BOC mobile app with improved UI/UX.
+                </p>
+              </div>
+              <div className="project-img-container"></div>
+            </a>
+          </div>
+        </section>
+        <section id="contact" className="contact">
+          <div className="work-header-container">
+            <div className="section-subheader-container">
+              <hr />
+              <h5>Contact</h5>
+            </div>
+            <h1 className="section-header-container">Get in Touch</h1>
+            <h6>
+              Email me at:{" "}
+              <a href="mailto:imashi921a@gmail.com">imashi921a[at]gmail.com</a>
+            </h6>
+          </div>
+        </section>
+        <section className="footer"></section>
+      </div>
     </>
   );
 };
