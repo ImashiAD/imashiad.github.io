@@ -1,15 +1,17 @@
 import React from "react";
-import { NavLink, useLocation } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 import useSectionInView from "../hooks/useSectionInView";
 
 const Navigation: React.FC = () => {
-  const location = useLocation();
+  const projectsInView = useSectionInView("projects");
   const contactInView = useSectionInView("contact");
 
   return (
     <nav>
-      <div className="logo signature">イマシ</div>
+      <NavLink to="/" className="logo signature">
+        イマシ
+      </NavLink>
       <ul>
         <li>
           <NavLink
@@ -28,12 +30,13 @@ const Navigation: React.FC = () => {
           </NavLink>
         </li>
         <li>
-          <NavLink
-            to="/contact"
-            className={({ isActive }) => (isActive ? "active" : "")}
+          <HashLink
+            smooth
+            to="/#projects"
+            className={projectsInView ? "active" : ""}
           >
             Projects
-          </NavLink>
+          </HashLink>
         </li>
         <li>
           <HashLink
