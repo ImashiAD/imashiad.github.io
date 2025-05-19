@@ -1,3 +1,5 @@
+import My3DScene from "./My3DScene";
+
 const Home = () => {
   return (
     <>
@@ -12,7 +14,8 @@ const Home = () => {
                   interfaces for complex systems.
                 </p>
               </div>
-              <div className="page-hero-img"></div>
+              <My3DScene />
+              {/* <div className="page-hero-img"></div> */}
             </div>
           </div>
         </div>
