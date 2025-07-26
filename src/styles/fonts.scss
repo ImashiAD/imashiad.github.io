@@ -6,22 +6,41 @@
 }
 
 @font-face {
-  font-family: "Poppins-Regular";
-  src: url("../assets/fonts/Poppins/Poppins-Regular.ttf") format("truetype");
+  font-family: "PlusJakartaSans-Italic";
+  src: url("../assets/fonts/PlusJakartaSans/PlusJakartaSans-Italic.ttf")
+    format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "Poppins-Medium";
-  src: url("../assets/fonts/Poppins/Poppins-Medium.ttf") format("truetype");
+  font-family: "PlusJakartaSans-Light";
+  src: url("../assets/fonts/PlusJakartaSans/PlusJakartaSans-Light.ttf")
+    format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "Poppins-SemiBold";
-  src: url("../assets/fonts/Poppins/Poppins-SemiBold.ttf") format("truetype");
+  font-family: "PlusJakartaSans-Regular";
+  src: url("../assets/fonts/PlusJakartaSans/PlusJakartaSans-Regular.ttf")
+    format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "PlusJakartaSans-Medium";
+  src: url("../assets/fonts/PlusJakartaSans/PlusJakartaSans-Medium.ttf")
+    format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "PlusJakartaSans-SemiBold";
+  src: url("../assets/fonts/PlusJakartaSans/PlusJakartaSans-SemiBold.ttf")
+    format("truetype");
   font-weight: normal;
   font-style: normal;
 }
@@ -32,7 +51,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Poppins-SemiBold", sans-serif !important;
+  font-family: "PlusJakartaSans-SemiBold", sans-serif !important;
 }
 
 .signature {
