@@ -1,6 +1,7 @@
+@use "./theme/main.scss" as *;
 @use "./fonts";
-@use "./colors" as *;
 @use "./liquid-glass" as *;
+@use "./starry-sky";
 
 $gradient-color: linear-gradient(to right, #fcd4c4, #f962a0, #aa96f9);
 
@@ -12,20 +13,23 @@ $gradient-color: linear-gradient(to right, #fcd4c4, #f962a0, #aa96f9);
   --lg-hover-glow: rgba(255, 255, 255, 0.4);
   --lg-red: #fb4268;
   --lg-grey: #5b5b5b;
+
+  --card-height: 40vw;
+  --card-margin: 4vw;
+  --card-top-offset: 1em;
+  --numcards: 4;
+  --outline-width: 0px;
 }
 
 body {
-  margin: 0;
-  padding: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-family: "PlusJakartaSans-Regular", sans-serif;
   color: #0f010e;
-  color: white;
   background: #f0efed;
-  background: #120b29;
+  background: #f2efea;
 }
 
 * {
@@ -98,54 +102,211 @@ a:not([href]):not([tabindex]):hover {
   height: 20px;
 }
 
-.hero-section {
+.content {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
   justify-content: center;
-  height: 700px;
-  width: 1200px;
-  margin-top: 144px;
+  gap: 24px;
+  width: 100%;
+  height: 100%;
+  padding: 0 6rem;
+  color: white;
 
-  .overlay {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.44);
-    border-radius: 72px;
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    backdrop-filter: blur(4px) saturate(120%);
-    -webkit-backdrop-filter: blur(4px) saturate(120%);
-    box-shadow: 0 32px 64px rgba(0, 0, 0, 0.14), 0 8px 32px rgba(0, 0, 0, 0.2),
-      inset 0 1px 0 rgba(255, 255, 255, 0.2), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+  .big-text {
+    font-size: 3.6rem;
+    font-weight: 600;
+    letter-spacing: 0.04rem;
   }
 
-  .big-text-container {
-    position: relative;
-    z-index: 2;
-    background-image: url("../assets/img/hero-bg.webp");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 100%;
-    height: 100%;
-    border-radius: 72px;
-    color: white;
+  p {
+    font-size: 1.2rem;
+  }
 
-    .big-text {
-      display: flex;
-      flex-direction: column;
-      gap: 24px;
-      font-size: 48px;
-      font-weight: 500;
-      padding: 2rem 6rem;
+  .bottom-row {
+    display: flex;
+    flex: row;
+    align-items: center;
+    gap: 24px;
 
-      .name {
-        font-size: 54px;
-        font-weight: 600;
-        letter-spacing: 0.04rem;
+    .glass-content-inline {
+      padding: 0;
+    }
+
+    .glass-container.button {
+      cursor: pointer;
+      border-radius: 42px;
+
+      padding: 0.5rem 1.2rem;
+
+      .glass-overlay {
+        background: rgba(240, 240, 240, 0.95);
       }
+
+      .btn-text {
+        color: #230630;
+        size: 1.2rem;
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          45deg,
+          transparent,
+          rgba(255, 255, 255, 0.1),
+          transparent
+        );
+        top: -100%;
+        left: -100%;
+        transition: all 0.5s ease;
+      }
+
+      &:hover::before {
+        top: 100%;
+        left: 100%;
+      }
+
+      &:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 15px rgba(15, 0, 60, 0.5);
+      }
+    }
+
+    .open-container {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #15ff15;
+
+      .open-dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 100%;
+        background-color: #41fa41;
+      }
+    }
+  }
+}
+
+/* Landing Page Section */
+.section-title-container {
+  width: 100%;
+  margin: 2rem 0 0;
+
+  .section-title {
+    color: #230630;
+  }
+}
+
+/* Landing Page Projects Section */
+
+.main {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+#cards {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(var(--numcards), var(--card-height));
+  gap: var(--card-margin);
+  padding: 0 0 calc(var(--numcards) * var(--card-top-offset));
+  margin-bottom: var(--card-margin);
+}
+
+#card-1 {
+  --index: 1;
+}
+
+#card-2 {
+  --index: 2;
+}
+
+#card-3 {
+  --index: 3;
+}
+
+#card-4 {
+  --index: 4;
+}
+
+.card {
+  position: sticky;
+  top: 152px;
+  padding-top: calc(var(--index) * var(--card-top-offset));
+}
+
+.card-content {
+  box-shadow: 0 0.2em 1em rgba(0, 0, 0, 0.1), 0 1em 2em rgba(0, 0, 0, 0.1);
+  background: #fffaf2;
+  color: #131212;
+  border-radius: 2rem;
+  overflow: hidden;
+  display: grid;
+  grid-template-areas: "text img";
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  align-items: stretch;
+  padding: 1.4em;
+}
+
+.card-content > div {
+  grid-area: text;
+  width: 95%;
+  max-width: 800px;
+  place-self: center;
+  text-align: left;
+  display: grid;
+  gap: 1em;
+  place-items: start;
+}
+
+.card-content > figure {
+  grid-area: img;
+  overflow: hidden;
+}
+
+.card-content > figure > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0.4em;
+}
+
+/* Animation */
+@supports (animation-timeline: works) {
+  @scroll-timeline cards-element-scrolls-in-body {
+    source: selector(body);
+    scroll-offsets: selector(#cards) start 1, selector(#cards) start 0;
+    start: selector(#cards) start 1;
+    end: selector(#cards) start 0;
+    time-range: 4s;
+  }
+
+  .card {
+    --index0: calc(var(--index) - 1);
+    --reverse-index: calc(var(--numcards) - var(--index0));
+    --reverse-index0: calc(var(--reverse-index) - 1);
+  }
+
+  .card__content {
+    transform-origin: 50% 0%;
+    will-change: transform;
+
+    --duration: calc(var(--reverse-index0) * 1s);
+    --delay: calc(var(--index0) * 1s);
+
+    animation: var(--duration) linear scale var(--delay) forwards;
+    animation-timeline: cards-element-scrolls-in-body;
+  }
+
+  @keyframes scale {
+    to {
+      transform: scale(calc(1.1 - calc(0.1 * var(--reverse-index))));
     }
   }
 }
