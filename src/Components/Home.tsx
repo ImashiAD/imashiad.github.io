@@ -3,14 +3,23 @@ import HeroSection from "./HeroSection";
 const Home = () => {
   return (
     <>
-      <div className="container-80 landing">
+      <div className="container-75 landing">
         <HeroSection />
 
-        <div className="section-title-container">
-          <h1 className="section-title">Discover My Work</h1>
-        </div>
+        <section>
+          <div className="section-title-container">
+            <h1 className="section-title">Discover My Work</h1>
+          </div>
 
-        <section className="main">
+          <div className="container">
+            <div className="book-list">
+              <div className="book books-1"></div>
+              <div className="book books-2"></div>
+            </div>
+          </div>
+        </section>
+
+        {/* <section className="main">
           <ul id="cards">
             <li className="card" id="card-1">
               <div className="card-content">
@@ -82,7 +91,7 @@ const Home = () => {
               </div>
             </li>
           </ul>
-        </section>
+        </section> */}
       </div>
     </>
   );

@@ -2,7 +2,7 @@ const HeroSection = () => {
   return (
     <>
       <div className="starry-wrapper">
-        <div className="sub-container">
+        <div className="sky-container">
           <div className="sky">
             <div className="stars"></div>
             <div className="stars2"></div>
