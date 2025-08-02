@@ -106,16 +106,22 @@ a:not([href]):not([tabindex]):hover {
   height: 20px;
 }
 
+.hero-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
 .content {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
   gap: 24px;
-  width: 100%;
+  width: 80%;
   height: 100%;
-  padding: 0 6rem;
-  color: white;
+  padding: 0;
 
   .big-text {
     font-size: 3.6rem;
@@ -183,13 +189,13 @@ a:not([href]):not([tabindex]):hover {
       display: flex;
       align-items: center;
       gap: 8px;
-      color: #15ff15;
+      color: #10b810;
 
       .open-dot {
         width: 10px;
         height: 10px;
         border-radius: 100%;
-        background-color: #41fa41;
+        background-color: #10b810;
       }
     }
   }
