@@ -10,7 +10,7 @@ import {
 } from "@react-three/drei";
 import * as THREE from "three";
 
-type AnimationName = "Idle" | "Dance" | "Greet" | "LookAround";
+type AnimationName = "Idle" | "Talking" | "Greet" | "LookAround";
 
 export const PringleAvatar: React.FC = () => {
   const group = useRef<THREE.Group>(null);
@@ -26,10 +26,14 @@ export const PringleAvatar: React.FC = () => {
   const returnToIdleRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const fadeDuration = 0.5;
-  const nonIdleAnimations: AnimationName[] = ["Dance", "Greet", "LookAround"];
+  const nonIdleAnimations: AnimationName[] = ["Talking", "Greet", "LookAround"];
 
   const pickRandomAnimation = (): AnimationName => {
     const available = nonIdleAnimations.filter((name) => name !== lastPlayed);
+    if (available.length === 0) {
+      // If all have been played, allow any non-idle animation
+      return nonIdleAnimations[Math.floor(Math.random() * nonIdleAnimations.length)];
+    }
     return available[Math.floor(Math.random() * available.length)];
   };
 

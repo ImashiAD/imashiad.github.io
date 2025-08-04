@@ -3,7 +3,6 @@ import My3DSceneNew from "./My3DSceneNew";
 const HeroSection = () => {
   return (
     <>
-      <My3DSceneNew />
       <div className="hero-section">
         <div className="content">
           <h1 className="big-text">
@@ -31,6 +30,18 @@ const HeroSection = () => {
               <span className="open">Open to New Opportunities</span>
             </div>
           </div>
+        </div>
+        <div
+          style={{
+            position: "absolute",
+            width: "40%",
+            height: "130%",
+            zIndex: 100,
+            top: "-149px",
+            right: "-140px",
+          }}
+        >
+          <My3DSceneNew />
         </div>
         <div className="starry-wrapper">
           <div className="window">
