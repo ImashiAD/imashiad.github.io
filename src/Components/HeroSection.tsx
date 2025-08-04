@@ -6,7 +6,9 @@ const HeroSection = () => {
       <My3DSceneNew />
       <div className="hero-section">
         <div className="content">
-          <h1 className="big-text">Hi there, I'm Imashi</h1>
+          <h1 className="big-text">
+            Hi there, I'm Imashi <span className="jap-text">イマジ</span>
+          </h1>
           <p>
             A UI/UX Designer crafting functional, human-centered interfaces for
             complex systems. I transform technical requirements into intuitive

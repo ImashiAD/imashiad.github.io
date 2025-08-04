@@ -312,6 +312,19 @@ a:not([href]):not([tabindex]):hover {
   opacity: 1;
 }
 
+.jap-text {
+  font-size: 64px;
+  margin-left: 8px;
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: bold;
+  background: linear-gradient(90deg, #f99, #f6c, #c9f, #a6f);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  letter-spacing: -1px;
+}
+
 // .main {
 //   width: 1200px;
 //   margin: 0 auto;
