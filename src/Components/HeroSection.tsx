@@ -1,3 +1,5 @@
+import My3DSceneNew from "./My3DSceneNew";
+
 const HeroSection = () => {
   return (
     <>
@@ -38,6 +40,17 @@ const HeroSection = () => {
               </div>
             </div>
           </div>
+        </div>
+        <div
+          style={{
+            position: "absolute",
+            width: "50%",
+            height: "70%",
+            right: 0,
+            bottom: 0,
+          }}
+        >
+          <My3DSceneNew />
         </div>
       </div>
     </>

@@ -15,9 +15,9 @@ function BedroomModel() {
   return <primitive object={gltf.scene} />;
 }
 
-function Pringle() {
+function Psycho() {
   const group = useRef<THREE.Group>(null);
-  const { scene, animations } = useGLTF("./pringle.glb");
+  const { scene, animations } = useGLTF("./psycho.glb");
   const { actions } = useAnimations(animations, group);
 
   useEffect(() => {
@@ -50,7 +50,7 @@ export default function My3DScene() {
       />
 
       <BedroomModel />
-      <Pringle />
+      <Psycho />
       <Environment preset="city" />
 
       <OrbitControls
